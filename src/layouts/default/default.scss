@@ -1,0 +1,18 @@
+@import '../../variables.scss';
+
+.default {
+    display: flex;
+    flex-direction: column;
+
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        background: $color-brand;
+        color: $color-white;
+        padding: 25px;
+    }
+
+    .content {
+    }
+}

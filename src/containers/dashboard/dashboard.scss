@@ -1,0 +1,7 @@
+.issue-description {
+    display: none;
+    
+    &.active {
+        display: flex;
+    }
+}
