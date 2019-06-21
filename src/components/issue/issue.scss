@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+.issueCard{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 400px;
+    height: 75px;
+    background: #fff;
+    border-radius: 4px;
+    color: $color-black;
+    margin: 0 16px 16px 0;
+    padding: 16px;
+    cursor: move;
+    transition: .3s ease all;
+
+    &:hover {
+        background: $color-white-hover;
+    }
+}

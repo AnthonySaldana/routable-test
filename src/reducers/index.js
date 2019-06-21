@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import IssueReducer from './IssueReducer';
+import GitReducer from './GitReducer';
 
 const appReducer = combineReducers({
-  issues: IssueReducer
+  git: GitReducer
 });
 
 const rootReducer = (state, action) => {

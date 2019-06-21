@@ -2,3 +2,14 @@
     display: grid;
     grid-template-columns: 300px auto;
 }
+
+p {
+    margin: 0;
+}
+
+@media only screen and (max-width: 900px) {
+    .grid {
+        grid-template-rows: 120px auto;
+        grid-template-columns: none;
+    }
+}

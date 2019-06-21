@@ -1,7 +1,25 @@
-.issue-description {
-    display: none;
-    
-    &.active {
+.repos, .issues {
+    max-height: 90vh;
+    overflow: scroll;
+}
+
+.issues {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .repos {
         display: flex;
+
+        .reposHeader {
+            margin-right: 16px;
+        }
+
+        .repoCard {
+            min-width: 200px;
+        }
     }
 }

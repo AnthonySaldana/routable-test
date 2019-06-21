@@ -10,9 +10,13 @@
         justify-content: space-between;
         background: $color-brand;
         color: $color-white;
-        padding: 25px;
+        padding: 24px 32px;
     }
 
     .content {
+        padding: 24px;
+        min-height: 90vh;
+        background: $bgcolor-content;
+        color: $color-white;
     }
 }
