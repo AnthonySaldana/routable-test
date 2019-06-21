@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<div>
+  <div
+    class="repoCard"
+  >
+    <p
+      class="repoName"
+    >
+      Test Repo
+    </p>
+    <p
+      class="repoIssues"
+    >
+      Open Issues: 
+      5
+    </p>
+  </div>
+</div>
+`;
