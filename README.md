@@ -1,3 +1,7 @@
+Before running you will have to set your github api key in the .env file. Don't push or deploy the app as it will contain the exposed key. Duplicate .env.example to .env and set REACT_APP_GIT_TOKEN to your git token.
+
+You can find your git tokens at https://github.com/settings/tokens
+
 ## Available Scripts
 
 Using the terminal in the project directory, you can run:
