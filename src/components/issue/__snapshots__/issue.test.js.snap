@@ -4,10 +4,9 @@ exports[`Matches Snapshot 1`] = `
 <div>
   <div
     class="issueCard"
+    draggable="true"
   >
-    <p>
-      Test Issue
-    </p>
+    Test Issue
   </div>
 </div>
 `;

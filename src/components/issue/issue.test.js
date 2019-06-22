@@ -20,5 +20,5 @@ it('Matches Snapshot', () => {
 });
 
 it('Issue Name matches up', () => {
-    expect(elem.getElementsByClassName('issueCard')[0].innerHTML).toEqual('<p>Test Issue</p>');
+    expect(elem.getElementsByClassName('issueCard')[0].innerHTML).toEqual('Test Issue');
 });
