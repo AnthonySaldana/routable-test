@@ -6,7 +6,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './configureStore';
 
-const store = configureStore();
+// Pull our persisted redux state from localstorage
+const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {};
+
+const store = configureStore(persistedState);
 
 ReactDOM.render(
     <Provider store={store}>

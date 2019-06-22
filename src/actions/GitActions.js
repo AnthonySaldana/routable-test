@@ -10,7 +10,7 @@ export const FETCH_ISSUES = 'FETCH_ISSUES';
 export const FETCH_ISSUES_SUCCESS = 'FETCH_ISSUES_SUCCESS';
 export const FETCH_ISSUES_FAILURE = 'FETCH_ISSUES_FAILURE';
 
-export const TOGGLE_ISSUE = 'TOGGLE_ISSUE';
+export const REORDER_ISSUES = 'REORDER_ISSUES';
 
 const endpoint = process.env.REACT_APP_ENDPOINT;
 const token = process.env.REACT_APP_GIT_TOKEN;
@@ -69,6 +69,6 @@ export function fetchIssues(repo, user) {
   }
 }
 
-export function toggleIssue(state) {
-  return { type: TOGGLE_ISSUE, state}
+export function reorderIssues(id, aid) {
+  return { type: REORDER_ISSUES, data: { nodeOne: id, nodeTwo: aid } }
 }

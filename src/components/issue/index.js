@@ -15,9 +15,10 @@ export default class repos extends React.Component {
         const { reorderIssues } = this.props;
         ev.preventDefault();
         var data = ev.dataTransfer.getData("id");
-        ev.target.insertAdjacentElement('afterend', document.getElementById(data));
-
-        reorderIssues(data, ev.target.id);
+        if( data !== ev.target.id ) {
+            ev.target.insertAdjacentElement('afterend', document.getElementById(data));
+            reorderIssues(data, ev.target.id);
+        }
     }
 
     render() {

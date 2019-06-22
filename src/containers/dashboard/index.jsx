@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import Layout from '../../layouts/default';
 import Issue from '../../components/issue';
 import Repo from '../../components/repo';
-import { fetchRepos, fetchIssues } from '../../actions/GitActions';
+import { fetchRepos, fetchIssues, reorderIssues } from '../../actions/GitActions';
 import './dashboard.scss';
 
 class dashboard extends React.Component {
     componentDidMount () {
-        const { fetchRepos } = this.props;
-        fetchRepos();
+        const { fetchRepos, repos } = this.props;
+        if ( repos.length === 0 ){
+            fetchRepos();
+        }
     }
 
     updateIssues = (repo) => {
@@ -26,8 +28,8 @@ class dashboard extends React.Component {
      * We will always insert after in this case.
      * **/
     reorderIssues = (id, aid) => {
-        console.log(id);
-        console.log(aid);
+        const { reorderIssues } = this.props;
+        reorderIssues(id, aid);
     }
 
     render () {
@@ -59,11 +61,12 @@ const mapStateToProps = (state) => {
       issues: state.git.issues
     }
 };
-  
+
 //const mapDispatchToProps = { fetchRepos };
 const mapDispatchToProps = dispatch => ({
     fetchRepos: () => dispatch(fetchRepos()),
-    fetchIssues: (repo, user) => dispatch(fetchIssues(repo, user))
+    fetchIssues: (repo, user) => dispatch(fetchIssues(repo, user)),
+    reorderIssues: (id, aid) => dispatch(reorderIssues(id, aid))
   });
   
 export default connect(
