@@ -23,8 +23,12 @@ import {
   function reorderIssues( listOfObjects, nodeOneId, nodeTwoId ) {
     var nodePos = listOfObjects.findIndex(function(x) {return x.id === parseInt(nodeOneId); });
     var targetPos = listOfObjects.findIndex(function(x) {return x.id === parseInt(nodeTwoId); });
-    listOfObjects.splice(targetPos + 1, 0, listOfObjects[nodePos]);
-    listOfObjects.splice(nodePos, 1);
+    listOfObjects.splice( targetPos + 1 , 0, listOfObjects[nodePos]);
+    if( nodePos > targetPos ) {
+      listOfObjects.splice(nodePos + 1, 1);
+    } else {
+      listOfObjects.splice(nodePos, 1);
+    }
     return listOfObjects;
   }
   
