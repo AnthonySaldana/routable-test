@@ -19,6 +19,17 @@ class dashboard extends React.Component {
         fetchIssues(repoName, username);
     }
 
+    /**
+     * id - id of element that is being moved
+     * aid - id of the element we are inserting after.
+     * 
+     * We will always insert after in this case.
+     * **/
+    reorderIssues = (id, aid) => {
+        console.log(id);
+        console.log(aid);
+    }
+
     render () {
         const { repos, issues } = this.props;
         return (
@@ -34,7 +45,7 @@ class dashboard extends React.Component {
                 <div className="issues active">
                     { issues.length > 0 ? <h2>Issues</h2> : <p>Select a Repo!</p> }
                     { issues ? issues.map((issue) => {
-                        return <Issue key={issue.id} issue={issue} />
+                        return <Issue key={issue.id} issue={issue} reorderIssues={(id, aid) => { this.reorderIssues(id, aid) }} />
                     }) : null }
                 </div>
             </Layout>
